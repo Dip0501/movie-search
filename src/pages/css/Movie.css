@@ -1,0 +1,17 @@
+.movie__info__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    max-width: 100px;
+    padding-right: 10px;
+    transition: all 100ms ease-in;
+}
+
+.movie__info__header:hover {
+    border-color: #B637FB;
+    color: #B637FB;
+}
