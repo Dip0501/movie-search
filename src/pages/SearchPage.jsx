@@ -26,7 +26,7 @@ function SearchPage() {
 
   async function getMovies() {
     setLoading(true)
-    const response = await axios.get(`http://www.omdbapi.com/?s=${search}&page=1&apikey=a0d26b4b&`)
+    const response = await axios.get(`https://www.omdbapi.com/?s=${search}&page=1&apikey=a0d26b4b&`)
     const data = response.data.Search
     if (data) {
       console.log(data);
