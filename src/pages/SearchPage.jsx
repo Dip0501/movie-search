@@ -3,21 +3,35 @@ import SearchBar from '../components/SearchBar'
 import './css/SearchPage.css'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import { searchTerm } from '../components/SearchBar';
+
 
 function SearchPage() {
+  const search = searchTerm
   const [movies, setMovies] = useState([])
   const navigate = useNavigate()
 
-  async function getMovies(searchTerm) {
-    const response = await axios.get(`http://www.omdbapi.com/?s=fast-&-furious&page=1&apikey=a0d26b4b&`)
+  function errorMovie() {
+    alert('Movie not found')
+  }
+
+  async function getMovies() {
+    const response = await axios.get(`http://www.omdbapi.com/?s=${search}&page=1&apikey=a0d26b4b&`)
+    console.log(response);
     const data = response.data.Search
-    console.log(data);
-    setMovies(data);
+    if (data) {
+      console.log(data);
+      setMovies(data);
+    }
+    else {
+      errorMovie()
+    }
+    
   } 
 
   useEffect(() => {
     getMovies()
-  },[])
+  },[search])
 
   return (
     <section className="search__page">

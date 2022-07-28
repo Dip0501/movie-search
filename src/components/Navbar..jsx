@@ -10,7 +10,6 @@ function Navbar() {
                 <img src={logo}/>
                 <ul className='nav__links'>
                     <li><Link to='/' className='nav__link'>Home</Link></li>
-                    <li><a className='nav__link'>Contact</a></li>
                     <li><Link to='/search' className='nav__link nav__link--primary'>Movies</Link></li>
                 </ul>
             </div>

@@ -1,9 +1,27 @@
 #home {
-    height: calc(100vh - 90px);
+    height: calc(100vh - 100px);
+    max-width: 100vw;
+    position: relative;
+    overflow: hidden;
 }
 
+/* #home:after {
+    background: url('../../assets/wave.svg');
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 100vw;
+    height: 13vh;
+    left: 0;
+    bottom: 0px;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+} */
+
 .home__container {
-    padding: 56px 0;
+    padding-top: 56px;
     margin: auto;
     display: flex;
 }
@@ -21,44 +39,19 @@
 .home__row > img {
     object-fit: contain;
     height: 480px;
+    z-index: 100;
 }
 
 .home__title,
 .home__title--description {
+    max-width: 900px;
+    text-align: center;
     line-height: 1.5;
     color: #fff;
 }
 
-.search__input {
-    display: flex;
-    align-items: center;
-    border: 1px solid white;
-    background-color: white;
-    height: 30px;
-    padding: 10px 20px;
-    border-radius: 999px;
-    width: 25%;
-    margin-top: 40px;
-    margin-bottom: 100px;
-}
-
-.search__input > input {
-    flex: 1;
-    padding: 10px 20px;
-    font-size: medium;
-    border: none;
-}
-
-.search__input > input:focus {
-    outline: none;
-}
-
-.search__input--icon {
-    color: #000;
-    transition: all 300ms ease !important;
-}
-
-.search__input--icon:hover {
-    color: #9505E3
+.home__title {
+    color: #B637FB;
+    font-size: 32px;
 }
 

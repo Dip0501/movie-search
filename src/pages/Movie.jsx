@@ -3,7 +3,8 @@ import './css/Movie.css'
 import axios from 'axios'
 import { useParams, useNavigate } from "react-router-dom";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 function Movie() {
   let navigate = useNavigate()
@@ -25,25 +26,38 @@ function Movie() {
     <section id='movie__details'>
       <div className="container">
         <div className="row">
-          <div className="movie__info__header" onClick={() => navigate('/search')}>
-              <ArrowBackIcon className="movie__header--btn"/>
-            <h2 className="movie__header--title">Back</h2>
+          <div className="movie__back" onClick={() => navigate('/search')}>
+            <ArrowBackIcon className="movie__back--btn"/>
+            <h2 className="movie__back--title">Back</h2>
           </div>
+          
           <div className="movie__selected">
             <figure className="movie__poster--wrapper">
               <img src={movie.Poster} alt="" className="movie__poster" />
             </figure>
             <div className="movie__description">
               <h2 className="movie__selected--title">{movie.Title}</h2>
-              <p>Director: {movie.Director}</p>
-              <p>Actors: {movie.Actors}</p>
-              <p>Classification: {movie.Rated}</p>
-              <p>Genre: {movie.Genre}</p>
-              <p>Release Date: {movie.Released}</p>
-              <p>Runtime: {movie.Runtime}</p>
-              <div className="movie__summary">
-                <p>Plot: {movie.Plot}</p>
+              <div className='movie__credits'>
+                <h3 className='movie__credit'>Director: {movie.Director}</h3>
+                <h3 className='movie__credit'>Actors: {movie.Actors}</h3>
               </div>
+              <div className="movie__specifics">
+                <p className="movie__specific">Classification: <br></br> {movie.Rated}</p>
+                <p className="movie__specific">Genre: <br></br>{movie.Genre}</p>
+                <p className="movie__specific">Release Date: <br></br>{movie.Released}</p>
+                <p className="movie__specific">Runtime:<br></br> {movie.Runtime}</p>
+              </div>
+              <div className="movie__summary">
+                <p className="movie__summary--para">{movie.Plot}</p>
+              </div>
+              <div className="movie__ratings">
+                <p className="movie__rating">Metascore: {movie.Metascore}</p>
+                <p className="movie__rating">IMDb: {movie.imdbRating}</p>
+              </div>
+              <button onClick={() => alert('Not yet implemented :(')} className="movie__watch">
+                <PlayCircleOutlineIcon className="movie__back--btn"/>
+                <h2 className="movie__back--title">Watch Now</h2>
+              </button>
             </div>
           </div>
         </div>

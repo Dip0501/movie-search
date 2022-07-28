@@ -1,0 +1,37 @@
+.search__input {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    background-color: white;
+    height: 30px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    width: 30vw;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.search__input > input {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    padding: 10px 20px;
+    font-size: medium;
+    border: none;
+}
+
+.search__input > input:focus {
+    outline: none;
+}
+
+.search__input--icon {
+    position: relative;
+    color: #000;
+    transition: all 300ms ease !important;
+}
+
+.search__input--icon:hover {
+    color: #9505E3
+}
