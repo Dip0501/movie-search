@@ -129,3 +129,16 @@
     color: #B637FB;
     border-color: #B637FB;
 }
+
+/*
+
+Skeleton loading state
+
+*/
+
+.movie__poster--skeleton {
+    background-color: lightgrey;
+    height: 350px;
+    margin: 16px;
+    border-radius: 8px;
+}

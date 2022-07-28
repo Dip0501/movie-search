@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router-dom";
 import { IconButton } from "@mui/material";
 
-export let searchTerm
+export let searchTerm = ''
 
 function SearchBar() {
     const [input, setInput] = useState('')

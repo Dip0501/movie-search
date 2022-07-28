@@ -1,8 +1,6 @@
 import React from 'react'
-import Navbar from '../components/Navbar.'
 import './css/Home.css'
 import HomeImg from '../assets/Home_Illustration.svg'
-import Wave from '../assets/wave.svg'
 import SearchBar from '../components/SearchBar'
 
 
