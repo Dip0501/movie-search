@@ -46,23 +46,23 @@ function Movie() {
               <div className="movie__selected">
                 <div className='movie__poster--wrapper movie__poster--skeleton'/>
                 <div className="movie__description">
-                  <h2 className="movie__selected--title skeleton"></h2>
+                  <h2 className="movie__selected--title skeleton"/>
                   <div className='movie__credits'>
-                    <h3 className='movie__credit skeleton'></h3>
-                    <h3 className='movie__credit skeleton'></h3>
+                    <div className='skeleton'/>
+                    <div className='skeleton'/>
                   </div>
                   <div className="movie__specifics">
-                  <p className="movie__specific skeleton"></p>
-                  <p className="movie__specific skeleton"></p>
-                  <p className="movie__specific skeleton"></p>
-                  <p className="movie__specific skeleton"></p>
-                </div>
-                <div className="movie__summary">
-                  <p className="movie__summary--para skeleton"></p>
+                    <div className="skeleton"/>
+                    <div className="skeleton"/>
+                    <div className="skeleton"/>
+                    <div className="skeleton"/>
+                  </div>
+                <div className="movie__summary skeleton">
+                  <div className="movie__summary--para skeleton__para"/>
                 </div>
                 <div className="movie__ratings">
-                  <p className="movie__rating skeleton"></p>
-                  <p className="movie__rating skeleton"></p>
+                  <p className="skeleton"/>
+                  <p className="skeleton"/>
                 </div>
                 <button onClick={() => alert('Not yet implemented :(')} className="movie__watch">
                   <PlayCircleOutlineIcon className="movie__back--btn"/>

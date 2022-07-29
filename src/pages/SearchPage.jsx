@@ -5,17 +5,16 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import { searchTerm } from '../components/SearchBar';
 import MissingImg from '../assets/missing_image.jpg'
+import SearchError from '../assets/search_error.svg'
 
 
 function SearchPage() {
   const search = searchTerm
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState()
+  const [validSearch, setValidSearch] = useState()
   const navigate = useNavigate()
 
-  function errorMovie() {
-    alert('Movie not found')
-  }
 
   function missingImage(image) {
     if (image == 'N/A') {
@@ -30,11 +29,12 @@ function SearchPage() {
     const data = response.data.Search
     if (data) {
       console.log(data);
+      setValidSearch(true)
       setMovies(data);
       setLoading(false)
     }
     else {
-      errorMovie()
+      setValidSearch(false)
       setLoading(false)
     }
     
@@ -54,30 +54,39 @@ function SearchPage() {
           </div>
           <div className="movies">
             {
-              loading ? (
-                movies.slice(0, 6).map(movie => (
-                 <div className="movie__skeleton">
-                    <div className='movie__img--skeleton'/>
-                    <div className="movie__display-text">
-                      <div className="movie__title--skeleton"/>
-                      <div className="movie__year--skeleton"/>
-                    </div>
-                 </div>
-                ))
-                 
-              ) : (
-                movies.slice(0, 6).map(movie => (
-                  <div className="movie" key={movie.imdbID} onClick={() => navigate(`/${movie.imdbID}`)} >
-                    <figure className="movie__img--wrapper">
-                      <img className="movie__img" src={missingImage(movie.Poster)} alt=""/>
-                    </figure>
-                    <div className="movie__display-text">
-                      <div className="movie__title">{movie.Title}</div>
-                      <div className="movie__year">Released: {movie.Year}</div>
-                    </div>
+              validSearch ? (
+                  ( loading ? (
+                  movies.slice(0, 6).map(movie => (
+                  <div className="movie__skeleton">
+                      <div className='movie__img--skeleton'/>
+                      <div className="movie__display-text">
+                        <div className="movie__title--skeleton"/>
+                        <div className="movie__year--skeleton"/>
+                      </div>
                   </div>
-              )))
+                  ))
+                ) : ( 
+                  movies.slice(0, 6).map(movie => (
+                    <div className="movie" key={movie.imdbID} onClick={() => navigate(`/${movie.imdbID}`)} >
+                      <figure className="movie__img--wrapper">
+                        <img className="movie__img" src={missingImage(movie.Poster)} alt=""/>
+                      </figure>
+                      <div className="movie__display-text">
+                        <div className="movie__title">{movie.Title}</div>
+                        <div className="movie__year">Released: {movie.Year}</div>
+                      </div>
+                    </div>
+                  )))
+                )
+              ) : (
+                <div className='movie__search--fail'>
+                  <img className='search__fail--img' src={SearchError} alt="" />
+                  <h2 className='search__fail--text'>We couldn't find what you're after, try a different search.</h2>
+                </div>
+              )
             }
+            
+            
             
           </div>
         </div>

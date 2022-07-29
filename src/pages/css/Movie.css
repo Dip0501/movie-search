@@ -61,7 +61,6 @@
 }
 
 .movie__credits {
-    width: 100%;
     color: white;
     font-size: 12px;
     padding: 8px 0px 0px 20px;
@@ -85,6 +84,7 @@
 
 .movie__specifics{
     padding-left: 20px;
+    flex-wrap: wrap;
 }
 .movie__ratings {
     margin: 0 auto;
@@ -97,13 +97,14 @@
 }
 
 .movie__specific {
-    margin-right: 32px;
+    margin: 16px
 }
 
 .movie__summary {
     color: white;
     font-size: 16px;
     font-weight: 600;
+    width: 100%;
 }
 
 .movie__summary--para {
@@ -141,4 +142,16 @@ Skeleton loading state
     height: 350px;
     margin: 16px;
     border-radius: 8px;
+}
+
+.skeleton {
+    margin: 12px 12px 8px 20px;
+    max-width: 200px;
+    padding: 12px;
+    background-color: grey;
+    display: flex;
+}
+
+.skeleton__para {
+    max-width: 500px;
 }

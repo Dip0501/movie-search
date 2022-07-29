@@ -15,3 +15,141 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+  .movie__img--wrapper {
+    max-width: 230px;
+    max-height: 300px;
+  }
+
+  .movie__img {
+    width: 100%;
+  }
+
+  .movie__poster--wrapper {
+    margin-top: 100px;
+    max-height: 400px;
+    max-width: 300px;
+  }
+
+  .movie__specific {
+    margin: 8px !important;
+  }
+
+  .movie__back {
+    margin: 0 auto !important;
+  }
+}
+
+/* SMALL PHONES, LARGE SMARTPHONES */
+@media (max-width: 600px) {
+  .movie__img--wrapper {
+    max-height: 250px;
+  }
+
+  .movie {
+    width: 100%;
+  }
+
+  .movie__poster--wrapper {
+    margin-top: 50px;
+  }
+  
+  .movie__credit {
+    font-size: 12px;
+  }
+
+  .movie__specific {
+    font-size: 12px;
+    margin: 4px !important;
+  }
+
+  .movie__summary--para {
+    font-size: 12px;
+  }
+
+  .movie__back {
+    margin: 0 auto !important;
+  }
+
+  .movie__search--fail {
+    max-width: 300px !important;
+  }
+}
+
+/* SMALL PHONEs */
+
+@media (max-width: 480px) {
+  .movies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie {
+    width: 100% !important;
+    max-width: 230px !important;
+  }
+  .movie__img--wrapper {
+    max-height: 300px;
+  }
+
+  .section__title {
+    font-size: 24px !important;
+  }
+  .movie__back {
+    margin: 0 auto !important;
+  }
+
+  .movie__selected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px 0 !important;
+  }
+
+  .movie__description {
+    margin: 0 auto 24px auto !important;
+
+  }
+
+  .movie__selected--title {
+    font-size: 16px !important;
+  }
+
+  .movie__credit {
+    font-size: 12px;
+  }
+  
+  .movie__specifics {
+    margin: 4px 4px 4px 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .movie__specific {
+    font-size: 12px;
+    margin: 4px !important;
+  }
+
+  .movie__summary--para {
+    margin: 0 auto !important;
+    font-size: 12px;
+  }
+
+  .movie__ratings {
+    display: none !important;
+  }
+
+  .movie__watch {
+    margin: 8px auto !important;
+    padding: 8px 12px !important;
+
+  }
+
+}
