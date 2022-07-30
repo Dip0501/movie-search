@@ -85,9 +85,6 @@ function SearchPage() {
                 </div>
               )
             }
-            
-            
-            
           </div>
         </div>
       </div>
